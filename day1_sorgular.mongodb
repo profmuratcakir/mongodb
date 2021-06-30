@@ -147,28 +147,28 @@ db.fiyatlar.find({"fiyat":{$lt:5000}, "urunAdi":{$ne:"Utu"}},
                  {"urunAdi":1, "fiyat":1, "_id":0});
 
 ////-----------------------------------------------------------------
-//// 18) fiyatı 5000'den kucuk olan VEYA urunAdi Koltuk olan urunlerin
+//// 19) fiyatı 5000'den kucuk olan VEYA urunAdi Koltuk olan urunlerin
 //// SADECE urunAdi ve fiyat bilgilerini listeleyiniz
 ////-----------------------------------------------------------------
 db.fiyatlar.find({$or: [{ "fiyat": {$lt:5000} },{"urunAdi":"Koltuk"}] }, 
                         {"urunAdi":1, "fiyat": 1, "_id":0});
 
 ////-----------------------------------------------------------------
-//// 19) urunlerin tamamini SADECE urunAdini gosterecek sekilde  
+//// 20) urunlerin tamamini SADECE urunAdini gosterecek sekilde  
 ////     fiyatlarina gore artan sirada listeleyiniz.
 ////-----------------------------------------------------------------
 // 1 : artan , -1: azalan 
 db.fiyatlar.find({},{"urunAdi":1,"_id":0}).sort({"fiyat": 1});  
 
 ////-----------------------------------------------------------------
-//// 20) urunlerin tamamini SADECE urunAdini gosterecek sekilde  
+//// 21) urunlerin tamamini SADECE urunAdini gosterecek sekilde  
 ////     fiyatlarina gore azalan sirada listeleyiniz.
 ////-----------------------------------------------------------------
 // 1 : artan , -1: azalan 
 db.fiyatlar.find({},{"urunAdi":1,"_id":0}).sort({"fiyat": -1});  
 
 ////-----------------------------------------------------------------
-//// 21) fiyati 5000 olan urunleri, urunAdi'na gore siralayarak (A-Z)
+//// 22) fiyati 5000 olan urunleri, urunAdi'na gore siralayarak (A-Z)
 //// listeleyiniz.
 ////-----------------------------------------------------------------
 // 1 : A-Z, -1: Z-A ( ASCII formatina gore siralama yapar)
