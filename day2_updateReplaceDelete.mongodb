@@ -51,7 +51,7 @@ db.personel.insertMany([
 db.personel.findOneAndReplace({"maas": {$lte:5000}}, {"maas":6000} );
 
 ////-----------------------------------------------------------------
-//// 4) Maasi 4800 olan personelin maasini 5000, isimni "Ali Can" ve 
-////   ise baslama tarhini su an yapalim.
+//// 4) Maasi 5250 olan personelin maasini 5555, ismini "Ceylan" ve 
+////   ise baslama tarihini su an yapalim.
 ////-----------------------------------------------------------------
 db.personel.findOneAndReplace({"maas": 5250}, {"maas":5555, "isim":"Ceylan", "iseBaslama": new Date()} );
