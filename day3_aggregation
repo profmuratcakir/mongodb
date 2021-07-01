@@ -109,3 +109,8 @@ db.ogrenciler.aggregate(pipeline);
 //// 8) yasi 30'Dan kucuk olanlarin subelere gore not ortalamalarini hesaplayan 
 ////    sorguyu yaziniz.
 ////---------------------------------------------------------------------------------
+
+db.ogrenciler.aggregate([
+  {$match:{yas :{$lt:30}}},
+  {$group: {_id:"$sube",ortalamaNot: {$avg: "$not"}}}
+]);
